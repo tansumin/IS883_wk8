@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableBranch
 
-st.title("🎈 New app for class!")
+st.title("‍✈️ Airline Customer Service")
 prompt = st.text_input("Share with us your experience of the latest trip.", "It was awesome!")
 
 
@@ -46,6 +46,7 @@ negativecontrolled_chain = PromptTemplate.from_template(
     Your response should follow these guidelines:
     1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer.
     2. Address the customer directly in first-person.
+    3. Sign off the response as Andy.
 
 Text:
 {text}
@@ -62,6 +63,7 @@ negativeuncontrolled_chain = PromptTemplate.from_template(
     Your response should follow these guidelines:
     1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer.
     2. Address the customer directly in first-person.
+    3. Sign off the response as Bobbie.
 
 Text:
 {text}
@@ -78,6 +80,7 @@ positive_chain = PromptTemplate.from_template(
     1. You will thank the customer for their feedback and for choosing to fly with the airline.
     2. Do not respond with any reasoning. Just respond professionally as a airline customer service officer.
     3. Address the customer directly.
+    4. Sign off the response as Celeste.
 
 Text:
 {text}
@@ -102,9 +105,9 @@ branch = RunnableBranch(
 ### Put all the chains together
 full_chain = {"flight_type": flight_type_chain, "text": lambda x: x["request"]} | branch
 
-langchain.debug = True
+langchain.debug = False
 
-response = full_chain.invoke({"request": "We had a spectacular trip and everything went very smooth. Flights were on time plus or minus 15 minutes and we got to where we needed to be each flight."})
+response = full_chain.invoke({"request": prompt})
 
 
 ### Display
