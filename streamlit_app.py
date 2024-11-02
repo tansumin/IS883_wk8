@@ -44,9 +44,9 @@ negativecontrolled_chain = PromptTemplate.from_template(
     Do not respond with any reasoning. Just respond professionally as a customer service officer. Respond in first-person mode.
 
     Your response should follow these guidelines:
-    1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer.
+    1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer in one short paragraph.
     2. Address the customer directly in first-person.
-    3. Sign off the response as Andy.
+    3. Sign off the response simply as Andy, no role or title.
 
 Text:
 {text}
@@ -61,9 +61,9 @@ negativeuncontrolled_chain = PromptTemplate.from_template(
     Do not respond with any reasoning. Just respond professionally as a customer service officer. Respond in first-person mode.
 
     Your response should follow these guidelines:
-    1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer.
+    1. Do not provide any reasoning behind the negative experience. Just respond professionally as a customer service officer in one short paragraph.
     2. Address the customer directly in first-person.
-    3. Sign off the response as Bobbie.
+    3. Sign off the response simply as Bobbie, no role or title.
 
 Text:
 {text}
@@ -78,9 +78,9 @@ positive_chain = PromptTemplate.from_template(
 
     Your response should follow these guidelines:
     1. You will thank the customer for their feedback and for choosing to fly with the airline.
-    2. Do not respond with any reasoning. Just respond professionally as a airline customer service officer.
+    2. Do not respond with any reasoning. Just respond professionally as a airline customer service officer in one short paragraph.
     3. Address the customer directly.
-    4. Sign off the response as Celeste.
+    4. Sign off the response simply as Celeste, no role or title.
 
 Text:
 {text}
