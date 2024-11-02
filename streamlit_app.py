@@ -108,4 +108,4 @@ response = full_chain.invoke({"request": "We had a spectacular trip and everythi
 
 
 ### Display
-st.write(response[0]['generated_text'])
+st.write(response)
